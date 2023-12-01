@@ -17,10 +17,6 @@ def json_to_csv(url):
 
     Output:
     - Creates a CSV file named 'products.csv' with product information.
-
-    Example:
-        url = "https://dummyjson.com/products"
-        json_to_csv(url)
     """
     try:
         response = requests.get(url)
@@ -29,7 +25,7 @@ def json_to_csv(url):
         products_data = json_data.get("products")
         headers = list(products_data[0].keys())
 
-        with open("products.csv", "w", newline="") as csv_file:
+        with open("products.csv", "w") as csv_file:
             csv_writer = csv.DictWriter(csv_file, fieldnames=headers)
             csv_writer.writeheader()
 

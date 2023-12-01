@@ -12,7 +12,7 @@ def read_csv_to_dict(file_path):
     - file_path (str): The path to the CSV file.
 
     Returns:
-    - data_list: A list of dictionaries where each dictionary represents a row in the CSV.
+    - data_list(list): A list of dictionaries where each dictionary represents a row in the CSV.
     """
     data_list = []
     try:
@@ -21,7 +21,7 @@ def read_csv_to_dict(file_path):
             data_list = list(csv_reader)
     except FileNotFoundError:
         print(f"File not found: {file_path}")
-    except e:
+    except Exception as e:
         print(f"An error occurred : {e}")
     return data_list
 
