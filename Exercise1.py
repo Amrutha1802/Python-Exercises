@@ -11,16 +11,38 @@ import csv
 import os
 
 
-def addData(employeeData):
-    with open('data.csv', 'w', newline='') as file:
-        headers=employeeData[0]
-        writer = csv.writer(file)
-        writer.writerow(headers)
-        writer.writerows(employeeData[1:])
-    return os.path.abspath('data.csv')
+def create_csv(data):
+    """
+    Creates and returns a CSV file named 'data.csv' from a given data.
 
-print("path of file is "+ addData([
-	["empid", "name", "address"],
-	[1, "John", "HYD"],
-	[2, "Bob", "AP"],
-]))
+    Parameters:
+    - data(list) : A nested list where the first element contains headers and the remaining elements contain data rows.
+
+    Example:
+        data = [
+            ["empid", "name", "address"],
+            [1, "John", "HYD"],
+            [2, "Bob", "AP"],
+        ]
+        create_csv(data)
+
+    Note:
+    - The function checks if the input is a valid nested array before creating the CSV file.
+    - If the input is invalid or empty, a message is printed, and no CSV file is created.
+    """
+    if not data or not all(isinstance(innerlist, list) for innerlist in data):
+        print("Invalid data , please provide non empty nested array")
+        return "File cannot be created "
+    with open("data.csv", "w") as file:
+        csv_writer = csv.writer(file)
+        csv_writer.writerows(data)
+    return os.path.abspath("data.csv")
+
+
+nested_list = [
+    ["empid", "name", "address"],
+    [1, "John", "HYD"],
+    [2, "Bob", "AP"],
+]
+csv_path = create_csv(nested_list)
+print(csv_path)
