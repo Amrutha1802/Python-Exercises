@@ -12,10 +12,10 @@ class Budget:
             self.balance += amount
             print("Amount {amount}$ deposited")
         else:
-            print("Inavlid amount")
+            print("Invalid amount")
 
     def withdraw(self, amount):
-        if amount > 0 and amount <= self.balance:
+        if 0 < amount <= self.balance:
             self.balance -= amount
             return True
         else:
@@ -29,7 +29,7 @@ class Budget:
                 f"{amount}$ transferred from {self.category} to {other_category.category}"
             )
         else:
-            print("Inavlid amount or insufficient funds")
+            print("Invalid amount or insufficient funds")
 
     def get_balance(self):
         return self.balance

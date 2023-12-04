@@ -26,12 +26,12 @@ def create_csv(data):
     try:
         if not data or not all(isinstance(innerlist, list) for innerlist in data):
             print("Invalid data , please provide non empty nested array")
-            return "File cannot be created "
+            return "File cannot be created"
         with open("data.csv", "w") as file:
             csv_writer = csv.writer(file)
             csv_writer.writerows(data)
     except Exception as e:
-        print(f"An error occurred : {e}")
+        print(f"An error occured {e}")
         return "File cannot be created"
     return os.path.abspath("data.csv")
 

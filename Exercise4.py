@@ -6,8 +6,10 @@ from collections import namedtuple, defaultdict, OrderedDict, deque, ChainMap, C
 def word_with_high_freq(text):
     list = text.split(" ")
     count = Counter(list)
-    (freq, word) = max(zip(count.values(), count.keys()))
-    print(f"Most common word in the give text is {word} and its frequency is {freq}")
+    c = count.most_common(1)
+    print(
+        f"Most common word in the give text is {c[0][0]} and its frequency is {c[0][1]}"
+    )
 
 
 text = "hello i am hello how are you doing hello "

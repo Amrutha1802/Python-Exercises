@@ -267,7 +267,6 @@ def custom_range_using_generator(*args):
 # create custom fibo function - custom_fibo using iter and next, without using loops
 # should support the following cases
 # custom_fibo(5) -> [1,1,2,3,5]
-# custom_fibo(1,5) -> [1,2,3,5,8]
 # for i in custom_fibo(5)
 # 	print(i) # 1,1,2,3,5
 
