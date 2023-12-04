@@ -212,7 +212,7 @@ print(f"transpose of the matrix is {transpose}")
 # 	print(i) # 0,1,2,3,4
 
 
-class custom_range_class:
+class CustomRangeClass:
     def __init__(self, *args):
         num_of_args = len(args)
         if num_of_args == 1:
@@ -243,7 +243,7 @@ class custom_range_class:
 
 
 def custom_range(*args):
-    custom_range_object = custom_range_class(*args)
+    custom_range_object = CustomRangeClass(*args)
     return custom_range_object
 
 
@@ -271,7 +271,7 @@ def custom_range_using_generator(*args):
 # 	print(i) # 1,1,2,3,5
 
 
-class custom_fibonacci_series:
+class CustomFibonacciSeries:
     def __init__(self, n):
         self.n = n
         self.a, self.b = 1, 1
@@ -290,7 +290,7 @@ class custom_fibonacci_series:
 
 
 def custom_fibo(n):
-    custom_fib_object = custom_fibonacci_series(n)
+    custom_fib_object = CustomFibonacciSeries(n)
     return custom_fib_object
 
 

@@ -61,7 +61,7 @@ print(coordinate1)
 
 
 # Deque Operations:Use a deque to implement a simple stack (last-in, first-out).
-class stack_using_deque:
+class StackUsingDeque:
     def __init__(self):
         self.stack = deque()
 
@@ -80,14 +80,14 @@ class stack_using_deque:
         return len(self.stack)
 
 
-st = stack_using_deque()
+st = StackUsingDeque()
 st.push(78)
 st.push(7)
 print(f"stack is {st.stack}")
 
 
 # Implement a queue (first-in, first-out) using a deque.
-class queue_using_deque:
+class QueueUsingDeque:
     def __init__(self):
         self.queue = deque()
 
@@ -106,7 +106,7 @@ class queue_using_deque:
         return len(self.queue)
 
 
-queue_object = queue_using_deque()
+queue_object = QueueUsingDeque()
 queue_object.enqueue(89)
 queue_object.enqueue(78)
 queue_object.enqueue(45)
@@ -163,3 +163,4 @@ Students = defaultdict(lambda: defaultdict(str))
 Students["Alice"]["Python"] = "a"
 Students["Bob"]["React"] = "b"
 print("Dictionary is ", Students)
+print(Students["Alice"])
